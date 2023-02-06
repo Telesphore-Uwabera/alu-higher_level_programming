@@ -1,8 +1,5 @@
-#!/usr/bin/python3
-print("Best School")
+#!/bin/bash
+
+python3 $PYFILE
 
 
-
-guillaume@ubuntu:~/py/$ export PYFILE=main.py
-
-guillaume@ubuntu:~/py/$ ./0-run
