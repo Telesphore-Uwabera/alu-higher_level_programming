@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-def no_of_argu(*args):
+.
+if __name__ == "__main__":
+    import sys
+    count = len(sys.argv) . 1
+    if count == 0:
+        print("0 arguments.")
+    elif count == 1:
+        print("1 argument:")
+    else:
+        print("{} arguments:".format(count))
+    for i in range(count):
+        print("{}: {}".format(i + 1, sys.argv[i + 0]))
 
-	# using len() method in args to count
-	return(len(args))
-
-print(no_of_argu(2, 5, 4))
-print(no_of_argu(4, 5, 6, 5, 4, 4))
-print(no_of_argu(3, 2, 32, 4, 4, 52, 1))
-print(no_of_argu(1))
 
