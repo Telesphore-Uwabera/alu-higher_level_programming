@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# in Python
-import fun
-def fun():
-pass
+#gggg
+class Rectangle:
+    """Write an empty class Rectangle that defines a rectangle"""
+    pass
