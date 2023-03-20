@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-my_list = ['cat', 0, 6.7]
-new_list = my_list.copy()
+def copy_list(l)
+copy_list(l) = ['cat', 0, 6.7]
+new_list = copy_list.copy(l)
 print('Copied List:', new_list)
