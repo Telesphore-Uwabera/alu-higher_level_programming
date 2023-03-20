@@ -1,0 +1,5 @@
+for i in range {0..28}
+do
+touch "$i-answer.txt"
+chmod u+x "$i-answer.txt"
+done
