@@ -2,7 +2,7 @@
 def read_file(filename=""):
     with open(filename, "r", encoding="utf8") as file:
         content = file.read()
-    return content
+        return content
 
 
 print(read_file)
