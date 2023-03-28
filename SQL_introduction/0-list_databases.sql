@@ -1,3 +1,4 @@
+#Starting MySQL database server mysqld 
 #!/bin/bash
 
 # Enter MySQL credentials
