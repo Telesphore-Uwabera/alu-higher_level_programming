@@ -1,2 +1,2 @@
 --show databases
-SHOW DATABASES;
+mysql -u hlocalhost -p -e 'show databases;'
