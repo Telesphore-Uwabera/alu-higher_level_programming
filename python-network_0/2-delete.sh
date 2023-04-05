@@ -1,3 +1,3 @@
 #!/bin/bash
 #delete
-RESPONSE=$(curl -s -X DELETE $URL)
+curl -sX DELETE "$1"
