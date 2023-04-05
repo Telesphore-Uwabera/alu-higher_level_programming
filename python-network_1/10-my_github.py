@@ -1,26 +1,20 @@
 #!/usr/bin/python3
 """Documented now"""
 import requests
+import requests.auth
 import sys
 
 if __name__ == '__main__':
-    try:
-        params = sys.argv[1]
-    except IndexError:
-        params = ""
-    response = requests.post(
-        "http://0.0.0.0:5000/search_user",
-        data={"q": params}
-    )
+    username = sys.argv[1]
+    password = sys.argv[2]
+    response = requests.get(
+        url="https://api.github.com/user",
+        auth=(requests.auth.HTTPBasicAuth(
+            username,
+            password
+        )))
     try:
         json_response = response.json()
-        if response.headers.get("Content-Type") == 'application/json':
-            if len(json_response) > 0:
-                print("[{}] {}".format(
-                    json_response["id"],
-                    json_response["name"])
-                )
-            else:
-                print("No result")
+        print("{}".format(json_response["id"]))
     except:
-        print("Not a valid JSON")
+        print(None)
