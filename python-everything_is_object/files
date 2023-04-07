@@ -1,5 +1,10 @@
 for i in range {0..28}
 do
+<<<<<<< HEAD
      touch "$i-answer.txt"
      chmod u+x "$i-answer.txt"
+=======
+touch "$i-answer.txt"
+chmod u+x "$i-answer.txt"
+>>>>>>> 3850e8b0267b718fca73eec09041fec9d582f425
 done

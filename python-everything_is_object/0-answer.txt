@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 #!/usr/bin/python3
 type()
+=======
+type
+>>>>>>> 3850e8b0267b718fca73eec09041fec9d582f425
