@@ -2,8 +2,10 @@
 
 if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
-    a = 10
-    b = 5
+    import sys
+
+    a = int(input("Enter a first number: "))
+    b = int(input("Enter a second number: "))
     print("{} + {} = {}".format(a, b, add(a, b)))
     print("{} - {} = {}".format(a, b, sub(a, b)))
     print("{} * {} = {}".format(a, b, mul(a, b)))
