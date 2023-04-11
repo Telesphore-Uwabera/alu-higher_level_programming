@@ -1,6 +1,6 @@
 Import `add_integer`
 
-def add(a, b):
+def add_integer(a, b):
 
 add_integer = __import__('0-add_integer').add_integer
 
@@ -15,7 +15,7 @@ add_integer = __import__('0-add_integer').add_integer
 
 >>> add_integer('a')
 Traceback (most recent call last):
-TypeError: a must be an integer
+TypeError: a must be an integer or a float
 
 >>> add_integer(3, 'b')
 Traceback (most recent call last):
