@@ -1,36 +1,32 @@
 #!/usr/bin/python3
+"""Doc"""
+
+
 def matrix_divided(matrix, div):
-    """
-    Divide all elements of a matrix by a given number and return a new matrix.
-
-    Parameters:
-    matrix (list of lists): A matrix represented as a list of lists of integers or floats.
-    div (int or float): The number to divide all elements of the matrix by.
-
-    Returns:
-    list of lists: A new matrix where all elements of the input matrix are divided by div and rounded to 2 decimal places.
-    """
-    # Check that matrix is a list of lists of integers or floats
-    if not all(isinstance(row, list) and all(isinstance(elem, (int, float)) for elem in row) for row in matrix):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-
-    # Check that each row of the matrix has the same size
-    row_sizes = set(len(row) for row in matrix)
-    if len(row_sizes) > 1:
-        raise TypeError("Each row of the matrix must have the same size")
-
-    # Check that div is a number (integer or float)
+    """"Doc"""
+    if not isinstance(matrix, (list,)):
+        raise TypeError("matrix must be a matrix "
+                        "(list of lists) of integers/floats")
+    for row in matrix:
+        if type(row) != list:
+            raise TypeError("matrix must be a matrix "
+                            "(list of lists) of integers/floats")
+        for item in row:
+            if not isinstance(item, (int, float)):
+                raise TypeError("matrix must be a matrix"
+                                " (list of lists) of integers/floats")
+    common_size = len(matrix[0])
+    for row in matrix:
+        if len(row) != common_size:
+            raise TypeError("Each row of the matrix must have the same size")
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
-
-    # Check that div is not equal to 0
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    # Divide all elements of the matrix by div and round to 2 decimal places
     new_matrix = []
-    for row in matrix:
-        new_row = [round(elem / div, 2) for elem in row]
-        new_matrix.append(new_row)
-
+    for i in range(len(matrix)):
+        new_matrix.append(list())
+        for j in range(len(matrix[i])):
+            new_matrix[i].append(round(matrix[i][j] / div, 2))
     return new_matrix
