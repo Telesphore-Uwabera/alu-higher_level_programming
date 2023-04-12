@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""Add two numbers"""
+"""Add two numbers a and b by using python codes"""
 
 
 def add_integer(a, b=98):
     """
-    Returns sum of a and b
-    - Args :
+    return- sum of a and b
         a: int or float
         b: int or float, default 98
     """
