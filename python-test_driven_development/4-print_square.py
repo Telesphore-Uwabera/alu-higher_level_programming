@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """"Module documentation"""
 
+
 def print_square(size):
     """"function documentation"""
     if not isinstance(size, (int,)):
