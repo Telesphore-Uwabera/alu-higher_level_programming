@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-""""Doc"""
-
+""""Module documentation"""
 
 def print_square(size):
-    """"Doc"""
+    """"function documentation"""
     if not isinstance(size, (int,)):
         raise TypeError("size must be an integer")
 
