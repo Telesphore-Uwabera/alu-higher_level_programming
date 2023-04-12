@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Module composed by a function that multiplies 2 matrices
-"""
+"""Module documentation"""
 
 
 def matrix_mul(m_a, m_b):
