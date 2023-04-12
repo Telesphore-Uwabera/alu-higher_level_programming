@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a matrix multiplication function using NumPy."""
+"""module documentation"""
 import numpy as np
 
 
