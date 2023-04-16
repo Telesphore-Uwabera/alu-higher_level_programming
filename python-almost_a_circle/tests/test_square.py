@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Test for Square"""
 
+import tests
 import os
 import unittest
 from io import StringIO
