@@ -2,7 +2,6 @@
 """Unit testing for the base class"""
 
 
-import tests
 import os
 from unittest import TestCase
 from models.base import Base

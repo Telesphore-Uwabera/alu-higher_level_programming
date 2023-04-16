@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Test the REctangle class"""
 
-import tests
 import unittest
 from io import StringIO
 from unittest.mock import patch
