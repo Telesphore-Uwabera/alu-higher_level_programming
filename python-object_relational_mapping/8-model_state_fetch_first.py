@@ -14,8 +14,8 @@ if __name__ == "__main__":
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
-    db_url = f"mysql+mysqldb://" + {mysql_username} + ":" +\
-            {mysql_password}@localhost:3306/{database_name}"
+    db_url = f"mysql+mysqldb://{mysql_username}:{mysql_password}@" + \
+         f"localhost:3306/{database_name}"
     engine = create_engine(db_url, pool_pre_ping=True)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
