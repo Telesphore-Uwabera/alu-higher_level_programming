@@ -1,38 +1,40 @@
 #!/usr/bin/python3
-"""Lists all cities of a given state from the database hbtn_0e_4_usa"""
-
-#!/usr/bin/python3
-"""Lists all cities of a given state from the database hbtn_0e_4_usa"""
+"""documentation"""
 
 import MySQLdb
 import sys
 
+
 if __name__ == '__main__':
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
-    state_name = sys.argv[4]
+    # Get MySQL username, password, database name, and state name from command-line arguments
+    mysql_username, mysql_password, database_name, state_name = sys.argv[1:]
 
-    # Connect to MySQL database
-    db = MySQLdb.connect(host='localhost', port=3306,
-                         user=username, passwd=password, db=db_name)
+    # Connect to MySQL server on localhost at port 3306
+    conn = MySQLdb.connect(
+        host='localhost',
+        port=3306,
+        user=mysql_username,
+        passwd=mysql_password,
+        db=database_name
+    )
 
-    # Create cursor to execute queries
-    cursor = db.cursor()
+    # Create a cursor object to execute SQL queries
+    cursor = conn.cursor()
 
-    # Execute the query to get cities of a given state
-    cursor.execute("SELECT cities.id, cities.name, states.name \
-                    FROM cities JOIN states ON cities.state_id = states.id \
-                    WHERE states.name = %s \
-                    ORDER BY cities.id ASC", (state_name,))
+    # Execute SQL query to retrieve all cities of the given state
+    cursor.execute(
+        "SELECT cities.name FROM cities "
+        "JOIN states ON cities.state_id = states.id "
+        "WHERE states.name = %s "
+        "ORDER BY cities.id ASC",
+        (state_name,)
+    )
 
-    # Fetch all the rows as a list of tuples
+    # Fetch all rows and print them
     rows = cursor.fetchall()
-
-    # Print the results
-    for city in cities:
-        print(", ".join(city[0] for city in cursor.fetchall()))
+    cities = [row[0] for row in rows]
+    print(", ".join(cities))
 
     # Close cursor and database connection
     cursor.close()
-    db.close()
+    conn.close()
