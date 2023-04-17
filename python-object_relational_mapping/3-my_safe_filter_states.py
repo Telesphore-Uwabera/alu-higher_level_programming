@@ -1,32 +1,30 @@
 #!/usr/bin/python3
 """module documentation"""
-
-import MySQLdb
 import sys
+import MySQLdb
 
-# Get command line arguments
-username = sys.argv[1]
-password = sys.argv[2]
-database = sys.argv[3]
-search = sys.argv[4]
+if __name__ == "__main__":
+    username = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+    state_name = sys.argv[4]
 
-# Connect to MySQL server
-db = MySQLdb.connect(host="localhost",
-                     user=username,
-                     passwd=password,
-                     db=database)
+    # Open database connection
+    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=db_name)
 
-cur = db.cursor()
+    # prepare a cursor object
+    cursor = db.cursor()
 
-# Use a parameterized query to avoid SQL injection
-query = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id ASC"
-cur.execute(query, (search,))
+    # execute SQL query using parameters to avoid SQL injection
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    cursor.execute(query, (state_name,))
 
-# Fetch all the rows and display them
-rows = cur.fetchall()
-for row in rows:
-    print(row)
+    # fetch all rows
+    rows = cursor.fetchall()
 
-# Close the database connection
-cur.close()
-db.close()
+    # print out the results
+    for row in rows:
+        print(row)
+
+    # disconnect from server
+    db.close()
