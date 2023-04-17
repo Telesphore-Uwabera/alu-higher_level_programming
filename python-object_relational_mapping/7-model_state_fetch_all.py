@@ -14,7 +14,8 @@ if __name__ == '__main__':
     database_name = sys.argv[3]
 
     # Create engine and session factory
-    db_url = f"mysql+mysqldb://{mysql_username}:{mysql_password}@localhost:3306/{database_name}"
+    db_url = f"mysql+mysqldb://{mysql_username}:{mysql_password}"
+    "@localhost:3306/{database_name}"
     engine = create_engine(db_url)
 
     Session = sessionmaker(bind=engine)
