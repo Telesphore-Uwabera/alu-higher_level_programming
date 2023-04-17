@@ -36,4 +36,3 @@ if __name__ == '__main__':
 
     # disconnect from server
     db.close()
-
