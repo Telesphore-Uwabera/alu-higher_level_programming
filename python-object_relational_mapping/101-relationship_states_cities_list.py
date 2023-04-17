@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Lists all State objects and corresponding City objects in the database hbtn_0e_101_usa
-Usage: ./101-relationship_states_cities_list.py <mysql username> <mysql password> <database name>
-"""
+"""module is documentede"""
 
 import sys
 from sqlalchemy import create_engine
