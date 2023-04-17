@@ -4,7 +4,7 @@ import MySQLdb
 import sys
 
 if __name__ == '__main__':
-    # Get MySQL username, password and database name from command-line arguments
+    # Get MySQL username, password and database name
     mysql_username, mysql_password, database_name = sys.argv[1:]
 
     # Connect to MySQL server on localhost at port 3306
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     # Create a cursor object to execute SQL queries
     cursor = conn.cursor()
 
-    # Execute SQL query to retrieve all states with a name starting with N (upper N)
+    # Execute SQL query to retrieve all states with a name starting with N
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     # Fetch all rows and print them
@@ -30,4 +30,3 @@ if __name__ == '__main__':
     # Close cursor and database connection
     cursor.close()
     conn.close()
-
