@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """module documentation"""
+#!/usr/bin/env python3
 import MySQLdb
 import sys
 
 if __name__ == '__main__':
-    # Get MySQL username, password and database name
+    # Get MySQL username, password and database name from command-line arguments
     mysql_username, mysql_password, database_name = sys.argv[1:]
 
     # Connect to MySQL server on localhost at port 3306
@@ -18,12 +19,15 @@ if __name__ == '__main__':
 
     # Create a cursor object to execute SQL queries
     cursor = conn.cursor()
-    # Execute SQL query to retrieve all states with a name starting with N
-    cursor.execute("SELECT * FROM st WHERE BINARY n LIKE 'N%' ORDER BY id ASC")
+
+    # Execute SQL query to retrieve all states with a name starting with N (upper N)
+    cursor.execute("SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id ASC")
+
     # Fetch all rows and print them
     rows = cursor.fetchall()
     for row in rows:
         print(row)
+
     # Close cursor and database connection
     cursor.close()
     conn.close()
