@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Module for fetching cities by state."""
 from sys import argv
 from sqlalchemy import create_engine
