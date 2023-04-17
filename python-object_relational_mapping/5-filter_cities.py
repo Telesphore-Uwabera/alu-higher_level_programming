@@ -4,32 +4,31 @@
 import MySQLdb
 import sys
 
-if __name__ == '__main__':
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
-    state_name = sys.argv[4]
+if __name__ == "__main__":
+    # Get the MySQL username, password, database name, and state name as arguments
+    username, password, database, state_name = sys.argv[1:]
 
-    # Connect to MySQL database
-    db = MySQLdb.connect(host='localhost', port=3306,
-                         user=username, passwd=password, db=db_name)
+    # Establish a connection to the MySQL server
+    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
 
-    # Create cursor to execute queries
-    cursor = db.cursor()
+    # Create a cursor object to execute SQL queries
+    cur = db.cursor()
 
-    # Execute the query to get cities of a given state
-    cursor.execute("SELECT cities.id, cities.name, states.name \
-                    FROM cities JOIN states ON cities.state_id = states.id \
-                    WHERE states.name = %s \
-                    ORDER BY cities.id ASC", (state_name,))
+    # Execute a SELECT statement to retrieve all cities of the specified state, ordered by id
+    query = """
+        SELECT cities.id, cities.name, states.name
+        FROM cities
+        INNER JOIN states ON cities.state_id = states.id
+        WHERE states.name = %s
+        ORDER BY cities.id ASC
+    """
+    cur.execute(query, (state_name,))
 
-    # Fetch all the rows as a list of tuples
-    rows = cursor.fetchall()
+    # Retrieve all the rows returned by the query and print them to the console
+    cities = cur.fetchall()
+    for city in cities:
+        print(city)
 
-    # Print the results
-    for row in rows:
-        print(row)
-        print(", ".join(city[0] for city in cursor.fetchall()))
-    # Close cursor and database connection
-    cursor.close()
+    # Close the cursor and database connections to release resources
+    cur.close()
     db.close()
