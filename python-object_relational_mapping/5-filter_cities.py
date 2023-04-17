@@ -29,7 +29,7 @@ if __name__ == '__main__':
     # Print the results
     for row in rows:
         print(row)
-
+        print(", ".join(city[0] for city in cursor.fetchall()))
     # Close cursor and database connection
     cursor.close()
     db.close()
