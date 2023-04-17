@@ -15,8 +15,8 @@ if __name__ == '__main__':
 
     # Create engine and session factory
     db_url = "mysql+mysqldb://" + mysql_username +\
-    ":" + mysql_password + "@" + \
-    "localhost:3306/" + database_name
+             ":" + mysql_password + "@" + \
+             "localhost:3306/" + database_name
     engine = create_engine(db_url)
 
     Session = sessionmaker(bind=engine)
