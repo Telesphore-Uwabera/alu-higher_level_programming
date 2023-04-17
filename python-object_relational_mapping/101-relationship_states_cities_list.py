@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """
-Lists all State objects and corresponding City objects in the database
-Usage: ./101-relationship_states_cities_list.py <mysql username>
-<mysql password> <database name>
+Lists all State objects and corresponding City objects in the database hbtn_0e_101_usa
+Usage: ./101-relationship_states_cities_list.py <mysql username> <mysql password> <database name>
 """
 
 import sys
@@ -12,6 +11,12 @@ from relationship_state import State
 from relationship_city import Base, City
 
 if __name__ == "__main__":
+    # Check for correct usage
+    if len(sys.argv) != 4:
+        print("Usage: ./101-relationship_states_cities_list.py <mysql username> <mysql password> <database name>")
+        exit()
+
+    # Get user credentials and database name from command line arguments
     user = sys.argv[1]
     passwd = sys.argv[2]
     db_name = sys.argv[3]
@@ -20,18 +25,21 @@ if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(user, passwd, db_name), pool_pre_ping=True)
 
+    # Create table structure
     Base.metadata.create_all(engine)
 
     # Create a session
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query database for all states and their corresponding cities
-    states = session.query(State).order_by(State.id).all()
+    # Query database for all states and their corresponding cities, sorted by state and city IDs
+    states = session.query(State).order_by(State.id, City.id).all()
 
     # Print results
     for state in states:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
-            print("\t{}: {}".format(city.id, city.name))
+            print("    {}: {}".format(city.id, city.name))
+
+    # Close the session
     session.close()
