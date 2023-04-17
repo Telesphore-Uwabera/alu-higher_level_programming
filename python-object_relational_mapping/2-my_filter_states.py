@@ -20,8 +20,7 @@ if __name__ == '__main__':
     )
 
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name 
-    LIKE BINARY '{}' ORDER BY id ASC".format(search)
+    query = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC".format(search)
     cur.execute(query)
 
     rows = cur.fetchall()
