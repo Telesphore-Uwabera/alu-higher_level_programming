@@ -6,7 +6,7 @@ import sys
 
 
 if __name__ == '__main__':
-    # Get MySQL username, password, database name, and state name from command-line arguments
+    # Get MySQL username, password, database name, and state name 
     mysql_username, mysql_password, database_name, state_name = sys.argv[1:]
 
     # Connect to MySQL server on localhost at port 3306
