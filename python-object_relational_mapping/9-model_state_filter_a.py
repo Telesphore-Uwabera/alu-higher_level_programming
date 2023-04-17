@@ -26,8 +26,7 @@ if __name__ == "__main__":
 
     # Query the database for State objects that contain the letter 'a'
     query = session.query(State)\
-            .filter(State.name.like('%a%'))\
-            .order_by(State.id)
+            .filter(State.name.like('%a%')).order_by(State.id)
 
     # Print out the results
     for state in query:
