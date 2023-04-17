@@ -18,15 +18,12 @@ if __name__ == '__main__':
 
     # Create a cursor object to execute SQL queries
     cursor = conn.cursor()
-
     # Execute SQL query to retrieve all states with a name starting with N
-    cursor.execute("SELECT * FROM st WHERE BINARY n LIKE 'N%' ORDER BY id ASC")
-
+    cursor.execute("SELECT * FROM st WHERE BINARY n LIKE 'N%' ORDER BY i")
     # Fetch all rows and print them
     rows = cursor.fetchall()
     for row in rows:
         print(row)
-
     # Close cursor and database connection
     cursor.close()
     conn.close()
