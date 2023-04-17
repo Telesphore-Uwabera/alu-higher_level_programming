@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all State objects that contain the letter a from the database hbtn_0e_6_usa
+Lists all State objects that contain the letter a
 """
 import sys
 from sqlalchemy.orm import sessionmaker
@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     # Creating engine and connecting to the database
     db_url = f"mysql+mysqldb://{mysql_username}:{mysql_password}\
-              @localhost:3306/{database_name}"
+             @localhost:3306/{database_name}"
     engine = create_engine(db_url)
 
     # Creating metadata
