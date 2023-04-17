@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """module documentation"""
-#!/usr/bin/env python3
+
 import MySQLdb
 import sys
+
 
 if __name__ == '__main__':
     # Get MySQL username, password and database name from command-line arguments
@@ -21,7 +22,11 @@ if __name__ == '__main__':
     cursor = conn.cursor()
 
     # Execute SQL query to retrieve all states with a name starting with N (upper N)
-    cursor.execute("SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id ASC")
+    cursor.execute(
+        "SELECT * FROM states "
+        "WHERE BINARY name LIKE 'N%' "
+        "ORDER BY id ASC"
+    )
 
     # Fetch all rows and print them
     rows = cursor.fetchall()
