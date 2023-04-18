@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Creates the State "California" with the City "San Francisco" from a DB
+Creates the State
 """
 
 import sys
