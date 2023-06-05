@@ -8,7 +8,10 @@ if (isNaN(size)) {
   let square = '';
 
   for (let i = 0; i < size; i++) {
-    square += 'X'.repeat(size) + '\n';
+    square += 'X'.repeat(size);
+    if (i < size - 1) {
+      square += '\n';
+    }
   }
 
   console.log(square);
