@@ -1,18 +1,18 @@
 #!/usr/bin/node
 
-// incrementAndCall.js
-function incrementAndCall(number, theFunction) {
-  number = incr(number);
-  theFunction(number);
-}
+// 103-object_fct.js
+let myObject = {
+  type: 'object',
+  value: 12,
+  incr: function () {
+    this.value++;
+  }
+};
 
-function incr(number) {
-  return number + 1;
-}
-
-// Example usage
-function myFunction(number) {
-  console.log("Number:", number);
-}
-
-incrementAndCall(5, myFunction);
+console.log(myObject);
+myObject.incr();
+console.log(myObject);
+myObject.incr();
+console.log(myObject);
+myObject.incr();
+console.log(myObject);
