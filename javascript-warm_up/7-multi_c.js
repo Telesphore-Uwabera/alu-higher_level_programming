@@ -10,4 +10,3 @@ if (!isNaN(times)) {
 } else {
   console.log('Missing number of occurrences');
 }
-
