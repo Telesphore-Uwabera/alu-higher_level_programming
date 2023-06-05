@@ -26,4 +26,3 @@ function findSecondBiggest(args) {
 const args = process.argv.slice(2);
 const result = findSecondBiggest(args);
 console.log(result);
-
