@@ -1,10 +1,11 @@
 #!/usr/bin/node
 
-// myFile.js
-let myVar = 123;
+let myVar = 40;
 
-// Modify the value of myVar
-myVar = 333;
+function updateMyVar() {
+  myVar = 333;
+}
 
-// Export the modified value
-exports.myVar = myVar;
+console.log(myVar);
+updateMyVar();
+console.log(myVar);
