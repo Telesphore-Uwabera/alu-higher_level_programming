@@ -1,10 +1,9 @@
 #!/usr/bin/node
 
-// 103-object_fct.js
 let myObject = {
   type: 'object',
   value: 12,
-  incr: function () {
+  incr() {
     this.value++;
   }
 };
