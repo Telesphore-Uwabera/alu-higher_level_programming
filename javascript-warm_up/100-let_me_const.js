@@ -8,5 +8,5 @@ var myVar = 40;
 myVar = 333;
 
 // Print the initial and updated values of myVar to the console
-console.log("Initial value of myVar =", 40);
-console.log("Updated value of myVar =", myVar);
+console.log(40);
+console.log(myVar);
