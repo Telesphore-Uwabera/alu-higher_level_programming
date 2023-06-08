@@ -1,7 +1,6 @@
 #!/usr/bin/node
-function Rectangle() {
-  // Constructor code goes here
+class Rectangle {
+  // Empty class definition
 }
 
-const r1 = new Rectangle();
-console.log(r1);
+module.exports = Rectangle;
