@@ -1,11 +1,11 @@
 #!/usr/bin/node
+// Contents of script.js file
 
-let myVar = 40;
+// Define the initial value of myVar
+var myVar = 123;
 
-function updateMyVar() {
-  myVar = 333;
-}
+// Modify the value of myVar to 333
+myVar = 333;
 
-console.log(myVar);
-updateMyVar();
-console.log(myVar);
+// Print the updated value of myVar to the console
+console.log("myVar =", myVar);
