@@ -6,4 +6,4 @@
 // Modify the value of myVar to 333
 
 // Print the updated value of myVar to the console
-console.log(myVar = 333);
+console.log(333);
