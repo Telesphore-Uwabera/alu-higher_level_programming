@@ -1,5 +1,9 @@
 #!/usr/bin/node
 class Rectangle {
-  // Empty class definition
+  constructor() {
+    // Constructor code goes here
+  }
 }
 
+const r1 = new Rectangle();
+console.log(r1);
