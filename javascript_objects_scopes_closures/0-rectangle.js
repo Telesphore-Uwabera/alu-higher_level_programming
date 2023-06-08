@@ -1,8 +1,6 @@
 #!/usr/bin/node
-class Rectangle {
-  constructor() {
-    // Constructor code goes here
-  }
+function Rectangle() {
+  // Constructor code goes here
 }
 
 const r1 = new Rectangle();
