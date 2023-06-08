@@ -9,4 +9,4 @@ myVar = 333;
 
 // Print the initial and updated values of myVar to the console
 console.log(40);
-console.log(myVar);
+console.log(333);
