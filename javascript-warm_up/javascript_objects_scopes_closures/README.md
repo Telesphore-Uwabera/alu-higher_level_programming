@@ -1,1 +1,0 @@
-Telesphore's JavaScript
