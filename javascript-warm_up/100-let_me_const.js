@@ -8,4 +8,4 @@ var myVar = 40;
 myVar = 333;
 
 // Print the updated value of myVar to the console
-console.log(myVar);
+//console.log(myVar);
