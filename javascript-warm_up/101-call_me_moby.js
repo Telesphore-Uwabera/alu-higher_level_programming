@@ -1,15 +1,12 @@
 #!/usr/bin/node
 
-// executeXTimes.js
-function executeXTimes(x, theFunction) {
-  for (let i = 0; i < x; i++) {
-    theFunction();
+function callMeMoby(x, theFunction) {
+  if (x <= 0) {
+    return;
   }
+
+  theFunction();
+  callMeMoby(x - 1, theFunction);
 }
 
-// Example usage
-function myFunction() {
-  console.log("Executing the function");
-}
-
-executeXTimes(5, myFunction);
+module.exports.callMeMoby = callMeMoby;
