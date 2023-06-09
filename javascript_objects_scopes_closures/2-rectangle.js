@@ -2,12 +2,11 @@
 class Rectangle {
   constructor(w, h) {
     if (w <= 0 || h <= 0 || isNaN(w) || isNaN(h)) {
-      return {}; // Create an empty object if width or height is 0 or not a positive integer
+      // Create an empty object if width or height is not a positive integer
+      return {};
+    } else {
+      this.width = w;
+      this.height = h;
     }
-
-    this.width = w;
-    this.height = h;
   }
 }
-
-module.exports = Rectangle;
