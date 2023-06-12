@@ -4,8 +4,8 @@ const request = require('request');
 
 // Function to check if Wedge Antilles is present in a movie
 function isWedgeAntillesPresent (movie) {
-  const wedgeAntillesId = 18;
-  return movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${wedgeAntillesId}/`);
+  const wedgeAntillesId = '18';
+  return movie.characters.some(characterUrl => characterUrl.includes(wedgeAntillesId));
 }
 
 // Check if the API URL is provided as an argument
