@@ -3,7 +3,7 @@
 const request = require('request');
 
 if (process.argv.length > 2) {
-	const url = process.argv[2];  
+  const url = process.argv[2];
   request.get(url, (error, response) => {
     if (error) {
       console.error(`An error occurred while making the request: ${error}`);
@@ -12,5 +12,5 @@ if (process.argv.length > 2) {
     }
   });
 } else {
-  console.log('Please provide the URL as an argument.');
+  console.log('provide the URL as an argument.');
 }
