@@ -4,7 +4,7 @@ const request = require('request');
 
 if (process.argv.length > 2) {
   const apiUrl = process.argv[2];
-  function isWedgeAntillesPresent (movie) {
+  function isWedgeAntillesPresent(movie) {
     const wedgeAntillesId = 18;
     return movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${wedgeAntillesId}/`);
   }
