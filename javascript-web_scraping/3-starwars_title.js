@@ -4,7 +4,7 @@ const request = require('request');
 
 if (process.argv.length > 2) {
   const movieId = process.argv[2];
-  const url = `https://swapi-api.alx-tools.com/api/films/${movieId}`; 
+  const url = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
   request.get(url, (error, response, body) => {
     if (error) {
       console.error(`An error occurred while making the request: ${error}`);
