@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Product Info</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div id="product-container"></div>
+
+  <script>
+    $(document).ready(function() {
+      $.getJSON('path/to/dummy_data.json', function(data) {
+        var products = data.products;
+
+        // Iterate through each product and display the info
+        $.each(products, function(index, product) {
+          var productInfo = '<div>' +
+            '<h2>' + product.name + '</h2>' +
+            '<p>' + product.price + '</p>' +
+            '<p>' + product.description + '</p>' +
+            '</div>';
+
+          // Append the product info to the container element
+          $('#product-container').append(productInfo);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
