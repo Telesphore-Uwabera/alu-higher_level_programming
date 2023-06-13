@@ -1,7 +1,7 @@
-fetch('https://Telesphore-Uwabera.github.io/alu-higher_level_programming/dummy_data.json')
+fetch('https://www.tvmaze.com/api')
   .then(response => response.json())
   .then(data => {
-    // Use the data here
+    // Access the data from the TVMaze API response here
     console.log(data);
   })
   .catch(error => {
