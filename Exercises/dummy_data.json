@@ -1,4 +1,4 @@
-fetch('https://your-github-username.github.io/your-repository-name/dummy_data.json')
+fetch('https://Telesphore-Uwabera.github.io/alu-higher_level_programming/dummy_data.json')
   .then(response => response.json())
   .then(data => {
     // Use the data here
