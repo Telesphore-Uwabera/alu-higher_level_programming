@@ -1,4 +1,4 @@
-## alu-higher_level_programming
+## Complete SQL, JavaScript and Python courses
 
 SQL_introduction
 
